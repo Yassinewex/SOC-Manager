@@ -15,6 +15,9 @@ db.init_app(app)
 from modules.equipements.routes import bp as equipements_bp
 app.register_blueprint(equipements_bp)
 
+from modules.logs.routes import bp as logs_bp
+app.register_blueprint(logs_bp)
+
 with app.app_context():
     db.create_all()
 

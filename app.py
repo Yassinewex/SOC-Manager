@@ -1,0 +1,1 @@
+print("SOC-Manager starting")

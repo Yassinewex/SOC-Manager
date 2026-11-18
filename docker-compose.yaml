@@ -20,3 +20,73 @@ services:
       - "5000:5000"
     depends_on:
       - db
+
+  module_1_fleet:
+    build: .
+    command: python manage_fleet.py
+    restart: always
+    depends_on:
+      - db
+
+  module_2_equipment:
+    build: .
+    command: python manage_equipment.py
+    restart: always
+    depends_on:
+      - db
+
+  module_3_maintenance:
+    build: .
+    command: python manage_maintenance.py
+    restart: always
+    depends_on:
+      - db
+
+  module_4_alerting:
+    build: .
+    command: python alerting.py
+    restart: always
+    depends_on:
+      - db
+
+  module_5_dashboard:
+    build: .
+    command: python dashboard.py
+    restart: always
+    depends_on:
+      - db
+
+  module_6_team:
+    build: .
+    command: python team_management.py
+    restart: always
+    depends_on:
+      - db
+
+  module_7_logs:
+    build: .
+    command: python log_analysis.py
+    restart: always
+    depends_on:
+      - db
+
+  module_8_vuln_scanner:
+    build: .
+    command: python vulnerability_scanner.py
+    restart: always
+    depends_on:
+      - db
+
+  module_9_threat_intel:
+    build: .
+    command: python threat_intel.py
+    restart: always
+    depends_on:
+      - db
+
+  module_10_incident_resp:
+    build: .
+    command: python incident_response.py
+    restart: always
+    depends_on:
+      - db

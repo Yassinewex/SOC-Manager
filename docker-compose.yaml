@@ -15,7 +15,7 @@ services:
     build: .
     restart: always
     environment:
-      DATABASE_URL: postgresql://user:password@db:5432/soc_db
+      DATABASE_URL: postgresql://soc_user:password@db:5432/soc_db
     ports:
       - "5000:5000"
     depends_on:
